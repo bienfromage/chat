@@ -88,12 +88,14 @@ socket.on('setAdmin',()=>{
 
 //display messages from admin
 socket.on('adminMessages', (messages)=>{
-  document.getElementById("stream").innerHTML = messages;
-  var list = document.getElementsByTagName("P");
-  for(i=0; i<list.length; i++){
-    if(list[i].className === "me")
-      list[i].className = "other";
-  }
+	if(!admin){
+	  document.getElementById("stream").innerHTML = messages;
+	  var list = document.getElementsByTagName("P");
+	  for(i=0; i<list.length; i++){
+		if(list[i].className === "me")
+		  list[i].className = "other";
+	   }
+	}
 });
 
 socket.on('requestNewAdmin',()=>{
