@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bienfromage Chat</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Chat Server with Socket technology">
+    <meta name="keywords" content="chat,ahsd,ahhs,bienfromage,adam">
+    <meta name="author" content="bienfromage">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+    <div class="container" id = "contain" onclick="menu()">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        <div class = "menu">
+            <p class = "menu-item" onclick="newChatStream()">Create/join new chat stream</p>
+            <div class="line"></div>
+            <p class= "menu_item"><a href="about">About</a></p>
+        </div>
+    </div>
+    
+    <div id = "name-stream" class="pop-up">
+        <img src="close.png" alt="close icon" onclick="cancelChatStream()"/>
+        <div class = "center">
+            <h1>Enter stream name below</h1>
+            <input type="text" id="new-stream">
+            <div class="button" onclick="setChatStream()">Enter</div>
+            <p>Share the stream name with your friends so they can join your chat! Messages will be saved as long as at least one user is logged in to your chat stream</p>
+        </div>
+    </div>
+    
+    <h1 id = "title">Enter Username</h1>
+    <div id = "stream">
+        
+    </div>
+    <input type="text" placeholder="username" id = "myInput" autofocus>
+    <div  onclick="setUsername()" id = "button" class="button">Enter</div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="chat-driver.js"></script>
+</body>
+</html>
